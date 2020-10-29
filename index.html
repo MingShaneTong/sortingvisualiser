@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Sorting Algorithm Visualiser</title>
+		<meta name="description" content="Shows off a range of sorting algorithms">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/styles.css">
+
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+		<script src="js/p5.js"></script>
+	</head>
+	<body>
+		<!-- HEADER -->
+		<!-- A bar containing the name, algorthm dropdown, items and speed dropdown, new and start/stop button -->
+		<header>
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<a class="navbar-brand" href="#">Sorting Visualiser</a>
+
+				<div class="navbar-collapse" id="navbarSupportedContent">
+				    <ul class="navbar-nav mr-auto">
+				    	<!-- Algorithm Selection -->
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-transform: capitalize;">
+							Algorithm
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<button class="dropdown-item" value="bubble">Bubble Sort</button>
+								<button class="dropdown-item" value="insertion">Insertion Sort</button>
+								<button class="dropdown-item" value="selection">Selection Sort</button>
+								<button class="dropdown-item" value="quick">Quick Sort</button>
+								<button class="dropdown-item" value="merge">Merge Sort</button>
+								<button class="dropdown-item" value="radix">Radix Sort</button>
+							</div>
+						</li>
+				    </ul>
+				</div>
+			</nav>
+			<nav class="mini-navbar navbar navbar-dark bg-dark">
+				<form class="form-inline">
+					<span class="navbar-text" id="items"> 100 Items </span>
+					<input type="range" min="1" max="250" value="100" class="slider" onchange="onItemSlider(this.value);">
+
+					<span class="spacer"></span>
+					
+					<span class="navbar-text" id="radix"> Radix Base 10 </span>
+					<input type="range" min="2" max="16" value="10" class="slider" onchange="onRadixSlider(this.value);">
+					<span class="spacer"></span>
+					<span class="navbar-text">
+						<button type="button" class="btn btn-sm btn-outline-light" onclick="createList();">New</button>
+					</span>
+				</form>
+			</nav>
+
+		</header>
+		<main></main>
+
+		
+		<script src="js/canvas.js"></script>
+		<script src="js/main.js"></script>
+
+		<script src="js/obj/Action.js"></script>
+
+		<script src="js/algo/bubbleSort.js"></script>
+		<script src="js/algo/mergeSort.js"></script>
+		<script src="js/algo/insertionSort.js"></script>
+		<script src="js/algo/quickSort.js"></script>
+		<script src="js/algo/selectionSort.js"></script>
+		<script src="js/algo/radixSort.js"></script>
+	</body>
+</html>
