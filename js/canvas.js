@@ -23,7 +23,7 @@ function draw(){
 	fill(color("blue"));
 
 	// check animations
-	if(!stop && animations.length > 0){
+	if(frameCount%(61-aps)===0 && !stop && animations.length > 0){
 		var a = animations[0];
 		switch(a.action){
 			case "swap":
@@ -42,7 +42,7 @@ function draw(){
 	}
 
 	// draws a rectangle for each item in the list
-	var rectWidth = windowWidth/displayList.length;
+	var rectWidth = width/displayList.length;
 	for(var i in displayList){
 		// draw the rectangle
 		var x = rectWidth*i;
@@ -52,7 +52,7 @@ function draw(){
 	// add play or pause icon
 	if(iconCount > 0){
 		var img = stop?pauseImg:playImg;
-		var x = windowWidth/2;
+		var x = width/2;
 		var y = windowHeight/2-img.height;
 		image(img, x, y);
 		iconCount--;

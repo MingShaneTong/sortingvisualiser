@@ -2,12 +2,12 @@ var itemList = [];
 var items = 100;
 var radixBase = 10;
 var algo;
+var aps = 60;
 
 /**
 	creates a list of numbers representing the height of the rectangle
 */
 function createList(){
-	var height = $("body").height() - $("header").height();
 	itemList = [];
 	displayList = [];
 	animations = [];
@@ -47,6 +47,13 @@ function onItemSlider(value){
 function onRadixSlider(value){
 	radixBase=value;
 	$("#radix").text("Radix Base " + value);
+}
+
+/**
+ * changes the frame rate
+ */
+function onAPSSlider(value){
+	aps = value;
 }
 
 

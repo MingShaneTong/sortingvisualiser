@@ -38,6 +38,36 @@
 						</li>
 				    </ul>
 				</div>
+
+				<!-- VIEW THE HELP TEXT -->
+				<button type="button" class="btn nav-item" data-toggle="modal" data-target="#helpModal" style="padding: 0; margin-left: auto;">
+					<img src="img/help.png" alt="Help" id="help">
+				</button>
+
+				<!-- Modal -->
+				<div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="helpModalLabel">Help</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<ol>
+									<li>Choose an Algorithm by selecting an option in the dropdown at the top of the screen.</li>
+									<li>Select the number of items to be sorted. </li>
+									<li>If you are using the Radix Sort then set the base. </li>
+									<li>Click the sort button to generate a list of random length. </li>
+									<li>Click on the list to sort the list from shortest length to longest length. You may also use the space bar once you have deselected the button.</li>
+									<li>Click the list again or use the space bar to pause and play the animation. </li>
+									<li>Adjust the Animations slider to change the speed the animations are being shown.</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
 			</nav>
 			<nav class="mini-navbar navbar navbar-dark bg-dark">
 				<form class="form-inline">
@@ -45,10 +75,17 @@
 					<input type="range" min="1" max="250" value="100" class="slider" onchange="onItemSlider(this.value);">
 
 					<span class="spacer"></span>
+
+					<span class="navbar-text" id="aps">Animations</span>
+					<input type="range" min="1" max="60" value="60" class="slider" onchange="onAPSSlider(this.value);">
+
+					<span class="spacer"></span>
 					
 					<span class="navbar-text" id="radix"> Radix Base 10 </span>
 					<input type="range" min="2" max="16" value="10" class="slider" onchange="onRadixSlider(this.value);">
+
 					<span class="spacer"></span>
+
 					<span class="navbar-text">
 						<button type="button" class="btn btn-sm btn-outline-light" onclick="createList();">New</button>
 					</span>
